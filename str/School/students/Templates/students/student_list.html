@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Student List</h2>
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'create_student' %}" class="btn btn-success mb-3">Add Student</a>
+        </div>
+        <div class="col">
+            <form method="GET" action="{% url 'student_list' %}" class="form-inline mb-3">
+                <input type="search" name="q" class="form-control mr-2" placeholder="Search by name" value="{{ query|default:'' }}">
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.age }}</td>
+                <td>
+                    <a href="{% url 'update_student' student.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_student' student.id %}" class="btn btn-danger">Delete</a>
+                   
+                    <a href="{% url 'generate_report' student.id %}" class="btn btn-info">Generate Report</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

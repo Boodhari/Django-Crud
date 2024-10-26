@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container mt-4">
+    <h2>Update Student</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group m-3">
+            <div class="col-6 m-3">
+                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="enter your name">
+            </div>
+            <div class="col-6 m-3">
+                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="enter your last_name">
+            </div>
+            <div class="col-6 m-3">
+                <input type="email" name="email" id="email" class="form-control" placeholder="enter your email">
+            </div>
+            <div class="col-6 m-3">
+                <input type="number" name="age" id="age" class="form-control" placeholder="enter your age">
+            </div>
+            
+         
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-left: 80px;">Update</button>
+    </form>
+</div>
+{%endblock%}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Create Student</h2> <br>
+    <div class="">
+        
+    <form method="post"  class="">
+        {% csrf_token %}
+        <div class="form-group m-3">
+            <div class="col-6 m-3">
+                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="enter your name">
+            </div>
+            <div class="col-6 m-3">
+                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="enter your last_name">
+            </div>
+            <div class="col-6 m-3">
+                <input type="email" name="email" id="email" class="form-control" placeholder="enter your email">
+            </div>
+            <div class="col-6 m-3">
+                <input type="number" name="age" id="age" class="form-control" placeholder="enter your age">
+            </div>
+            
+         
+        </div>
+        
+        <button type="submit" class="btn btn-primary ms-3" style="margin-left: 80px;">Submit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>
